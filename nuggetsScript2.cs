@@ -13,7 +13,8 @@ public class nuggetsScript2 : MonoBehaviour
     private void Update()
     {
         
-        gameObject.transform.Rotate(new Vector3(1f, 1f, 4f));
+        gameObject.transform.Rotate(new Vector3(1f, 1f, 5f));
+
     }
 
     // Update is called once per frame
@@ -23,6 +24,9 @@ public class nuggetsScript2 : MonoBehaviour
 
         gameObject.SetActive(false);
         nuggetsScript.nuggetsIncremantation++;
+        int scoreTotal = PlayerPrefs.GetInt("NuggetsCurrency") + 1;
+        PlayerPrefs.SetInt("NuggetsCurrency",scoreTotal);
+        //Debug.Log("LEZIMTZID");
         
     }
 }

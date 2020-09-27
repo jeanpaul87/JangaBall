@@ -10,11 +10,11 @@ public class movSphere : MonoBehaviour
     public float speed;
 
     public Text levelName;
-
     public static int kilometraj;
 
 
     [SerializeField] private Transform spawnPonit ;
+    [SerializeField] private GameObject endOfPartButton;
     void Start()
     {
         joystick = FindObjectOfType<Joystick>();
@@ -82,7 +82,7 @@ public class movSphere : MonoBehaviour
             if (SceneManager.GetActiveScene().buildIndex >= unlockLevels.levelEasy)
             {
                 PlayerPrefs.SetInt("arrivedMapEasy", (SceneManager.GetActiveScene().buildIndex + 1 - 15));
-                Debug.Log(SceneManager.GetActiveScene().buildIndex + 1 - 14);
+              //  Debug.Log(SceneManager.GetActiveScene().buildIndex + 1 - 14);
                 unlockLevels.levelEasy = PlayerPrefs.GetInt("arrivedMapEasy");
             }
         }
@@ -92,6 +92,13 @@ public class movSphere : MonoBehaviour
             
 
             levelName.text = SceneManager.GetActiveScene().name;
+            
+        }
+        if (other.gameObject.tag == "endOfPart")
+        {   
+            
+
+            endOfPartButton.SetActive(true);
             
         }
 

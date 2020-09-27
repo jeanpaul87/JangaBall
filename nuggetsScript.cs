@@ -33,7 +33,7 @@ public class nuggetsScript : MonoBehaviour
            // Debug.Log("DDDDDDDDDD");
             finishh.SetActive(true);
             nuggetsScore.score.text = "You just collected all the required nuggets," +
-                             " you may now proceed to the next level.";
+                                      " you may now proceed to the next level.";
             nuggetsIncremantation = 0;
         }
 

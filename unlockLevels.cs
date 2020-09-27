@@ -10,6 +10,7 @@ public class unlockLevels : MonoBehaviour
 
     public static int level = 1;
     public static int levelEasy = 1;
+    public static int nuggetsCurency =1;
 
     public int maxLevelChallenging;
     public int maxLevelEasy;
@@ -23,6 +24,7 @@ public class unlockLevels : MonoBehaviour
         Time.timeScale = 1f;
        level = PlayerPrefs.GetInt("arrivedMap", level);
        levelEasy = PlayerPrefs.GetInt("arrivedMapEasy", levelEasy);
+       nuggetsCurency = PlayerPrefs.GetInt("NuggetsCurrency", nuggetsCurency);
        // Debug.Log(level);
 
         Debug.Log(maxLevelEasy);
@@ -31,7 +33,7 @@ public class unlockLevels : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(levelEasy);
+      //  Debug.Log(levelEasy);
             for (int i = 0; i < maxLevelChallenging; i++)
             {
                 if (i < level)
@@ -44,9 +46,9 @@ public class unlockLevels : MonoBehaviour
                     levelUnlocked[i].SetActive(false);
                 }
             }
-            for (int i = 0; i < maxLevelEasy; i++)
+            for (int i = 0; i < maxLevelEasy; i++)//Verification, what level to unlock
             {
-                if (i < levelEasy)
+                if (i < levelEasy)                  // levelEasy is your easy level unlock level
                 {
                     //  Debug.Log(i);
                     levelUnlockedEasy[i].SetActive(true);
@@ -78,7 +80,6 @@ public class unlockLevels : MonoBehaviour
     public void Reset()
     {
         level = 1;
-      // PlayerPrefs.SetInt("Level", level);
         PlayerPrefs.SetInt("arrivedMap", 1);
         levelEasy = 1;
         PlayerPrefs.SetInt("arrivedMapEasy", 1);

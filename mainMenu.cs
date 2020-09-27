@@ -2,23 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-//using UnityEngine.UI;
+
 
 public class mainMenu : MonoBehaviour
 {
    // public GameObject levelButtonPrefab;
    // public GameObject levelButtonContainer;
 
-
-   
-
     private Transform cameraTransform;
     private Transform cameraDesiredLookAt;
-
+    
     private void Start()
     {
         cameraTransform = Camera.main.transform;
-        
+       
        // Sprite[] thumbnails = Resources.LoadAll<Sprite>("Levels");
     }
     private void Update()
@@ -65,7 +62,6 @@ public class mainMenu : MonoBehaviour
     {
         pannel.SetActive(false);
     }
-
     
 }
 
